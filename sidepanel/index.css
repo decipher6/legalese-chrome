@@ -1,0 +1,162 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
+    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  color: #3f0461;
+  background-color: #f2f2f2;
+  font-size: 16px;
+  padding: 8px;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  background: #5d0378;
+  color: white;
+  border-radius: 8px;
+  border: none;
+  min-width: 100px;
+  padding: 8px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #333;
+  color: white;
+}
+
+button.secondary {
+  background: #ccc;
+  color: black;
+}
+
+button[disabled] {
+  background: #ddaef4;
+  color: #370351;
+}
+
+input[type='range'] {
+  margin-top: 16px;
+  accent-color: black;
+}
+
+textarea {
+  --padding: 32px;
+  width: calc(100% - var(--padding));
+  max-width: calc(100% - var(--padding));
+}
+
+.text,
+textarea {
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+  outline: none;
+}
+
+.blink {
+  animation: 1s ease-in-out 1s infinite reverse both running blink;
+}
+
+@keyframes blink {
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
+/* Sidebar Styling */
+
+#sidebar {
+  position: fixed;
+  bottom: 10px; /* Distance from the bottom */
+  right: 10px;  /* Distance from the right */
+  /*z-index: 1000;  Ensure it's above other elements */
+}
+
+label.switch {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+label.switch input {
+  display: none; /* Hide the actual checkbox */
+}
+
+label.switch .slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #ccc;
+  border-radius: 15px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+label.switch .slider:before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s ease-in-out;
+}
+
+label.switch input:checked + .slider {
+  background-color: #5d0378; /* Dark mode accent color */
+}
+
+label.switch input:checked + .slider:before {
+  transform: translateX(20px); /* Move the knob to the right */
+}
+
+#sidebar {
+  position: fixed; /* Makes it fixed in one place regardless of scrolling */
+  bottom: 10px;    /* Distance from the bottom of the screen */
+  right: 10px;     /* Distance from the right edge of the screen */
+  z-index: 1000;   /* Ensures it is above other elements */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+body.dark-mode input,
+body.dark-mode button {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
+
+body.dark-mode .primary {
+  border-color: #221616;
+}
+
+body.dark-mode .secondary {
+  border-color: #372828;
+}
+
+body.dark-mode #response {
+  background-color: #1f1f1f;
+  color: #ffffff;
+}
